@@ -3,6 +3,7 @@ package com.codecool.testing;
 public class Game {
 
     private Terminal terminal;
+    private String playerName;
 
     public Game(Terminal terminal) {
         this.terminal = terminal;
@@ -22,5 +23,6 @@ public class Game {
         terminal.clear();
         terminal.moveCursor(1, 1);
         terminal.printText("Hello World!");
+        playerName = readPlayerName();
     }
 }
