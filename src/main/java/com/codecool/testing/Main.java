@@ -6,7 +6,14 @@ public class Main {
     public static void main(String[] args) {
         Terminal terminal = new Terminal();
         start(terminal);
+        String playerName = readPlayerName(terminal);
+        terminal.printText(playerName);
         run();
+    }
+
+    private static String readPlayerName(Terminal terminal) {
+        terminal.moveCursor(5, 10);
+        return terminal.prompt("Please input your name");
     }
 
     private static void run() {
