@@ -8,16 +8,17 @@ public class Main {
         moveCursor(1, 1);
         System.out.println("Hello World!");
         for(;;) {
-
         }
-
     }
-
     private static void moveCursor(int x, int y) {
-        System.out.print(String.format("\033[%d:%dH", x, y));
+        terminalCommand(String.format("%d;%sd", x, y));
     }
 
     private static void clear() {
-        System.out.print("\033[2J");
+        terminalCommand("2J");
+    }
+
+    private static void terminalCommand(String commandText) {
+        System.out.print(String.format("\33[%s", commandText));
     }
 }
