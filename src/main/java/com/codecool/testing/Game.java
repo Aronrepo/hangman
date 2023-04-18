@@ -8,7 +8,7 @@ public class Game {
     public Game(Terminal terminal) {
         this.terminal = terminal;
     }
-    public String readPlayerName() {
+    private String readPlayerName() {
         terminal.moveCursor(5, 10);
         return terminal.prompt("Please input your name");
     }
