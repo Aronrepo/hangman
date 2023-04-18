@@ -5,11 +5,20 @@ package com.codecool.testing;
 public class Main {
     public static void main(String[] args) {
         Terminal terminal = new Terminal();
-        terminal.clear();
-        terminal.moveCursor(10, 1);
-        terminal.printText("Hello World!");
+        start(terminal);
+        run();
+    }
+
+    private static void run() {
         for(;;) {
+
         }
+    }
+
+    private static void start(Terminal terminal) {
+        terminal.clear();
+        terminal.moveCursor(1, 1);
+        terminal.printText("Hello World!");
     }
 
 }
