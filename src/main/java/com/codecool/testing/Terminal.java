@@ -2,26 +2,38 @@ package com.codecool.testing;
 
 import java.util.Scanner;
 
-public class Terminal {
-    public void moveCursor(int row, int column) {
-        terminalCommand(String.format("%d;%dH", row, column));
-    }
+public interface Terminal {
+    void moveCursor(int row, int column);
 
-    public void clear() {
-        terminalCommand("2J");
-    }
+    void clear();
 
-    public void printText(String text) {
-        System.out.print(text);
-    }
+    void printText(String text);
 
-    public String prompt(String promptText) {
-        printText(String.format("%s: ", promptText));
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
-    }
+    String prompt(String promptText);
 
-    private void terminalCommand(String commandText) {
-        System.out.print(String.format("\033[%s", commandText));
-    }
 }
+
+
+//public class Terminal {
+//    public void moveCursor(int row, int column) {
+//        terminalCommand(String.format("%d;%dH", row, column));
+//    }
+//
+//    public void clear() {
+//        terminalCommand("2J");
+//    }
+//
+//    public void printText(String text) {
+//        System.out.print(text);
+//    }
+//
+//    public String prompt(String promptText) {
+//        printText(String.format("%s: ", promptText));
+//        Scanner scanner = new Scanner(System.in);
+//        return scanner.nextLine();
+//    }
+//
+//    private void terminalCommand(String commandText) {
+//        System.out.print(String.format("\033[%s", commandText));
+//    }
+//}

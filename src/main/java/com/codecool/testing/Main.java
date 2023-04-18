@@ -4,28 +4,12 @@ package com.codecool.testing;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Terminal terminal = new Terminal();
-        start(terminal);
-        String playerName = readPlayerName(terminal);
-        terminal.printText(playerName);
-        run();
+        Terminal terminal = new AnsiTerminal();
+        Game game = new Game(terminal);
+        game.start();
+        game.run();
     }
 
-    private static String readPlayerName(Terminal terminal) {
-        terminal.moveCursor(5, 10);
-        return terminal.prompt("Please input your name");
-    }
 
-    private static void run() {
-        for(;;) {
-
-        }
-    }
-
-    private static void start(Terminal terminal) {
-        terminal.clear();
-        terminal.moveCursor(1, 1);
-        terminal.printText("Hello World!");
-    }
 
 }
